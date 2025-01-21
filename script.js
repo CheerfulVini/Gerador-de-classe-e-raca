@@ -1,17 +1,18 @@
 const racas = [
-    "dragonborn", "dwarf", "elf", "gnome", "half elf", "halfling", "half orc", "humano", 
-    "tiefling", "Aarakokra", "aasimar", "genasi (rola um d4)", "bugbear", "centauro", 
-    "changeling", "deep gnome", "duegar", "eladrin", "fairy", "firbolg", "Githyanki", 
+    "Dragonborn", "Dwarf", "Elf", "Gnome", "Half Elf", "Halfling", "Half Orc", "Humano", 
+    "Tiefling", "Aarakokra", "Aasimar", "Genasi (Rola Um D4)", "Bugbear", "Centauro", 
+    "Changeling", "Deep Gnome", "Duegar", "Eladrin", "Fairy", "Firbolg", "Githyanki", 
     "Githzerai", "Goblin", "Goliath", "Harengon", "Hobgoblin", "Kenku", "Kobold", 
-    "Lizardfolk", "Minotaur", "Orc", "Satyr", "Sea elf", "Shadar-kai", "Shifter", 
-    "Tabaxi", "Tortle", "Triton", "Yuan-ti", "Kender", "Astral elf", "Autognome", 
-    "Giff", "Hadozee", "Plasmoid", "Thri-kreen", "Owlin", "Leolin", "Kalashtar", 
+    "Lizardfolk", "Minotaur", "Orc", "Satyr", "Sea Elf", "Shadar-Kai", "Shifter", 
+    "Tabaxi", "Tortle", "Triton", "Yuan-Ti", "Kender", "Astral Elf", "Autognome", 
+    "Giff", "Hadozee", "Plasmoid", "Thri-Kreen", "Owlin", "Leolin", "Kalashtar", 
     "Warforged", "Verdan", "Loxodon", "Simic Hybrid", "Vedalken", "Locathah", 
     "Cervan", "Corvum", "Gallus", "Hedge", "Jerbeen", "Lumas", "Mapach", "Raptor", 
     "Strig", "Vulpin", "Grung", "Aetherborn", "Aven", "Khenra", "Kor", "Merfolk", 
     "Naga", "Siren", "Vampire", "Dhamphir", "Hexblood", "Reborn", "Glitchling", 
     "Rabbitfolk", "Revenant", "Viashino"
 ];
+
   
 const classes = [
     "Artificer: Alchemist", "Artificer: Armorer", "Artificer: Artillerist", "Artificer: Battle smith",
@@ -68,6 +69,6 @@ function gerar(){
     let num1 = getRandomInt(118)
     let num2 = getRandomInt(81)
     
-    classe.innerText = 'Classe: ' + racas[num1];
-    raca.innerText = 'Raça: ' + classes[num2]
+    classe.innerText = 'Classe: ' + classes[num1];
+    raca.innerText = 'Raça: ' + racas[num2]
 }

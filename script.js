@@ -56,12 +56,20 @@ const classes = [
     "Mago: School of Necromancy", "Mago: Order of Scribes", "Mago: School of Transmutation", 
     "Mago: School of War Magic"
   ];
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * (max));
+}
   
+let chance = getRandomInt(10)
+console.log(chance)
+
+if (chance == 1) {
+    imagem = document.querySelector('#sidebar')
+    imagem.style.display = 'block'
+}
 
 function gerar(){
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * (max));
-    }
     
     let classe = document.querySelector('#classe')
     let raca = document.querySelector('#raca')

@@ -4,23 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Gerador D&D</title>
 </head>
 <body>
-    <h1>Gerador de classe e raca</h1>
+    <header>
+        <h1 id="header">Gerador de classe e raca</h1>
+    </header>
 
     <main>
+
         <div id="container">
-            <h2 id="classe">Classe</h2>
-            <h2 id="raca">Raca</h2>
+            <div id="classeraca">
+                <h2 id="classe">Classe</h2>
+                <h2 id="raca">Raca</h2>
+            </div>
+
+            <div>
+                <h5>Seletor de Livros</h5>
+                <p><input type="checkbox" name="phb" id="phb"> Livro do Jogador</p>
+                <p><input type="checkbox" name="mkm" id="mkm"> Mordenkainen Multiverso</p>
+                <p><input type="checkbox" name="dgl" id="dgl"> Dragonlance</p>
+                <p><input type="checkbox" name="spj" id="spj"> SpellJammer</p>
+                <p><input type="checkbox" name="stx" id="stx"> Strixhaven</p>
+                <p><input type="checkbox" name="thr" id="thr"> Theros</p>
+                <p><input type="checkbox" name="aqi" id="aqi"> Aquisições Incoporadas</p>
+                <p><input type="checkbox" name="gmr" id="gmr"> Guia dos Mestres de Ravnica</p>
+                <p><input type="checkbox" name="lcr" id="lcr"> Locathah Rising</p>
+                <p><input type="checkbox" name="hmb" id="hmb"> Humblewood</p>
+                <p><input type="checkbox" name="oga" id="oga"> One Grung Above</p>
+                <p><input type="checkbox" name="pls" id="pls"> Plano Shift</p>
+                <p><input type="checkbox" name="rvn" id="rvn"> Ravenloft</p>
+            </div>
+
             <button onclick="gerar()">Clica pra fazer coisa</button>
         </div>
 
         <div id="sidebar">
-            <img src="Busca um relacionamento.png" alt="">
+            <a href="virus.html"><img src="Busca um relacionamento.png" alt=""></a>
         </div>
 
-        
     </main>
 
     <script src="script.js"></script>

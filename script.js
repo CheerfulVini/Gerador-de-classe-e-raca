@@ -13,48 +13,52 @@ const racas = [
     "Rabbitfolk", "Revenant", "Viashino"
 ];
 
+const dndRacas = [
+    { livro: "Livro do Jogador", racas: [
+        "Draconato", "Anão", "Elfo", "Gnomo", "Meio-Elfo", "Halfling",
+        "Meio-Orc", "Humano", "Tiefling"
+    ]},
+    { livro: "Mordenkainen Multiverso", racas: [
+        "Aarakocra", "Aasimar", "Genasi", "Bugbear", "Centauro", "Metamorfo", "Gnomo Profundo",
+        "Duergar", "Eladrin", "Fada", "Firbolg", "Githyanki", "Githzerai", "Goblin", "Goliath",
+        "Harengon", "Hobgoblin", "Kenku", "Kobold", "Homem-Lagarto", "Minotauro", "Orc", "Sátiro",
+        "Elfo do Mar", "Shadar-kai", "Troca-Peles", "Tabaxi", "Tortle", "Tritão", "Yuan-ti"
+    ]},
+    { livro: "Dragonlance", racas: ["Kender"] },
+    { livro: "Spelljammer", racas: [
+        "Elfo Astral", "Autognomo", "Giff", "Hadozee", "Plasmóide", "Thri-kreen"
+    ]},
+    { livro: "Strixhaven", racas: ["Corujin"] },
+    { livro: "Odisséias Míticas de Theros", racas: ["Leonino", "Kalashtar", "Forjado Bélico"] },
+    { livro: "Aquisições Incorporadas", racas: ["Verdan"] },
+    { livro: "Guia dos Mestres de Ravnica", racas: ["Loxodon", "Híbrido Símico", "Vedalken"] },
+    { livro: "Locathah Rising", racas: ["Locathah"] },
+    { livro: "Humblewood", racas: [
+        "Cervan", "Corvum", "Gallus", "Hedge", "Jerbeen", "Lumas", "Mapach", "Raptor",
+        "Strig", "Vulpin"
+    ]},
+    { livro: "One Grung Above", racas: ["Grung"] },
+    { livro: "Plano Shift", racas: [
+        "Aetherborn", "Aven", "Khenra", "Kor", "Tritão", "Naga", "Sereia", "Vampiro"
+    ]},
+    { livro: "Ravenloft", racas: ["Dhampir", "Hexblood", "Renascido"] }
+];
+
   
 const classes = [
-    "Artificer: Alchemist", "Artificer: Armorer", "Artificer: Artillerist", "Artificer: Battle smith",
-    "Bárbaro: Path of the Ancestral Guardian", "Bárbaro: Path of the Battlerager", 
-    "Bárbaro: Path of the Beast", "Bárbaro: Path of the Berserker", "Bárbaro: Path of the Giant", 
-    "Bárbaro: Path of the Storm Herald", "Bárbaro: Path of the Totem Warrior", "Bárbaro: Path of Wild Magic", 
-    "Bárbaro: Path of the Zealot",
-    "Bardo: College of Creation", "Bardo: College of Eloquence", "Bardo: College of Glamour", 
-    "Bardo: College of Lore", "Bardo: College of Spirits", "Bardo: College of Swords", 
-    "Bardo: College of Valor", "Bardo: College of Whispers",
-    "Clérigo: Arcana Domain", "Clérigo: Death Domain", "Clérigo: Forge Domain", "Clérigo: Grave Domain", 
-    "Clérigo: Knowledge Domain", "Clérigo: Life Domain", "Clérigo: Light Domain", "Clérigo: Nature Domain", 
-    "Clérigo: Order Domain", "Clérigo: Peace Domain", "Clérigo: Tempest Domain", "Clérigo: Trickery Domain", 
-    "Clérigo: Twilight Domain", "Clérigo: War Domain",
-    "Druida: Circle of Dreams", "Druida: Circle of the Land", "Druida: Circle of the Moon", 
-    "Druida: Circle of the Shepherd", "Druida: Circle of Spores", "Druida: Circle of Stars", 
-    "Druida: Circle of Wildfire",
-    "Guerreiro: Arcane Archer", "Guerreiro: Banneret", "Guerreiro: Battle Master", "Guerreiro: Cavalier", 
-    "Guerreiro: Champion", "Guerreiro: Echo Knight", "Guerreiro: Eldritch Knight", "Guerreiro: Psi Warrior", 
-    "Guerreiro: Rune Knight", "Guerreiro: Samurai",
-    "Monge: Way of Mercy", "Monge: Way of the Ascendant Dragon", "Monge: Way of the Astral Self", 
-    "Monge: Way of the Drunken Master", "Monge: Way of the Four Elements", "Monge: Way of the Kensei", 
-    "Monge: Way of the Long Death", "Monge: Way of the Open Hand", "Monge: Way of Shadow", 
-    "Monge: Way of the Sun Soul",
-    "Paladino: Oath of the Ancients", "Paladino: Oath of Conquest", "Paladino: Oath of the Crown", 
-    "Paladino: Oath of Devotion", "Paladino: Oath of Glory", "Paladino: Oath of Redemption", 
-    "Paladino: Oath of Vengeance", "Paladino: Oath of the Watchers", "Paladino: Oathbreaker",
-    "Ranger: Beast Master Conclave", "Ranger: Drakewarden", "Ranger: Fey Wanderer", 
-    "Ranger: Gloom Stalker Conclave", "Ranger: Horizon Walker Conclave", "Ranger: Hunter Conclave", 
-    "Ranger: Monster Slayer Conclave", "Ranger: Swarmkeeper",
-    "Ladino: Arcane Trickster", "Ladino: Assassin", "Ladino: Inquisitive", "Ladino: Mastermind", 
-    "Ladino: Phantom", "Ladino: Scout", "Ladino: Soulknife", "Ladino: Swashbuckler", "Ladino: Thief",
-    "Feiticeiro: Aberrant Mind", "Feiticeiro: Clockwork Soul", "Feiticeiro: Draconic Bloodline", 
-    "Feiticeiro: Divine Soul", "Feiticeiro: Lunar Sorcery", "Feiticeiro: Shadow Magic", 
-    "Feiticeiro: Storm Sorcery", "Feiticeiro: Wild Magic",
-    "Bruxo: Archfey", "Bruxo: Celestial", "Bruxo: Fathomless", "Bruxo: Fiend", "Bruxo: The Genie", 
-    "Bruxo: Great Old One", "Bruxo: Hexblade", "Bruxo: Undead", "Bruxo: Undying",
-    "Mago: School of Abjuration", "Mago: School of Bladesinging", "Mago: School of Chronurgy", 
-    "Mago: School of Conjuration", "Mago: School of Divination", "Mago: School of Enchantment", 
-    "Mago: School of Evocation", "Mago: School of Graviturgy", "Mago: School of Illusion", 
-    "Mago: School of Necromancy", "Mago: Order of Scribes", "Mago: School of Transmutation", 
-    "Mago: School of War Magic"
+    "Artificer",
+    "Bárbaro",
+    "Bardo",
+    "Clérigo",
+    "Druida",
+    "Guerreiro",
+    "Monge",
+    "Paladino",
+    "Ranger",
+    "Ladino",
+    "Feiticeiro",
+    "Bruxo",
+    "Mago"
   ];
 
 function getRandomInt(max) {
@@ -73,10 +77,46 @@ function gerar(){
     
     let classe = document.querySelector('#classe')
     let raca = document.querySelector('#raca')
+
+    var checkboxes = [
+        document.getElementById("phb"),
+        document.getElementById("mkm"),
+        document.getElementById("dgl"),
+        document.getElementById("spj"),
+        document.getElementById("stx"),
+        document.getElementById("thr"),
+        document.getElementById("aqi"),
+        document.getElementById("gmr"),
+        document.getElementById("lcr"),
+        document.getElementById("hmb"),
+        document.getElementById("oga"),
+        document.getElementById("pls"),
+        document.getElementById("rvn")
+    ];
+
+    let numCheckbox = 0;
+    let livros = []
+
+    for (let index = 0; index < checkboxes.length; index++) {
+        if (checkboxes[index].checked == true){
+            livros.push(dndRacas[index])
+            numCheckbox++
+        }
+    }
+
+    livro = livros[getRandomInt(numCheckbox)]['racas']
+    racaEscolhida = livro[getRandomInt(livro.length)]
+
+    console.log(livros)
+
+    console.log(racaEscolhida);
     
-    let num1 = getRandomInt(118)
-    let num2 = getRandomInt(81)
-    
-    classe.innerText = 'Classe: ' + classes[num1];
-    raca.innerText = 'Raça: ' + racas[num2]
+    let numclasse = getRandomInt(13)
+    classe.innerText = 'Classe: ' + classes[numclasse];
+    raca.innerText = 'Raça: ' + racaEscolhida
+}
+
+function virus(){
+    let img = document.querySelector('#virus')
+    img.style.display = 'block'
 }

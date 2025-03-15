@@ -120,3 +120,25 @@ function virus(){
     let img = document.querySelector('#virus')
     img.style.display = 'block'
 }
+
+function seleciona() {
+    var checkboxes = [
+        document.getElementById("phb"),
+        document.getElementById("mkm"),
+        document.getElementById("dgl"),
+        document.getElementById("spj"),
+        document.getElementById("stx"),
+        document.getElementById("thr"),
+        document.getElementById("aqi"),
+        document.getElementById("gmr"),
+        document.getElementById("lcr"),
+        document.getElementById("hmb"),
+        document.getElementById("oga"),
+        document.getElementById("pls"),
+        document.getElementById("rvn")
+    ];
+
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = true;
+    }
+}

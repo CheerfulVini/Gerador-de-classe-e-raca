@@ -118,7 +118,7 @@ function gerar(){
 
 function virus(){
     let img = document.querySelector('#virus')
-    img.style.display = 'block'
+    img.style.display = 'flex'
 }
 
 function seleciona() {
@@ -140,5 +140,17 @@ function seleciona() {
 
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].checked = true;
+    }
+}
+
+let aberto = false
+
+function hamburger() {
+    if(aberto == false){
+        document.getElementById('hamburger').style.left = '0px'
+        aberto = true
+    }else{
+        document.getElementById('hamburger').style.left = '-370px'
+        aberto = false
     }
 }

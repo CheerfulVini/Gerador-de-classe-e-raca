@@ -73,6 +73,89 @@ if (chance == 1) {
     imagem.style.display = 'block'
 }
 
+function preencherFicha() {
+    const form = document.querySelector(".formMonstro");
+    const dados = new FormData(form);
+
+    const nome = dados.get("nome");
+    const tamanho = dados.get("tamanho");
+    const alinhamento = dados.get("alinhamento");
+    const ca = dados.get("ca");
+    const hp = dados.get("hp");
+    const velocidade = dados.get("velocidade");
+
+    const forca = dados.get("for");
+    const des = dados.get("des");
+    const con = dados.get("con");
+    const inteli = dados.get("int");
+    const sab = dados.get("sab");
+    const car = dados.get("car");
+
+    const salvaguardas = dados.get("salvaguardas");
+    const pericias = dados.get("pericias");
+    const sentidos = dados.get("sentidos");
+    const linguas = dados.get("linguas");
+
+    const hab1_nome = dados.get("habilidade1_nome");
+    const hab1_desc = dados.get("habilidade1_desc");
+    const hab2_nome = dados.get("habilidade2_nome");
+    const hab2_desc = dados.get("habilidade2_desc");
+
+    const acao1_nome = dados.get("acao1_nome");
+    const acao1_desc = dados.get("acao1_desc");
+    const acao2_nome = dados.get("acao2_nome");
+    const acao2_desc = dados.get("acao2_desc");
+
+    const reacao1_nome = dados.get("reacao_nome1");
+    const reacao1_desc = dados.get("reacao_desc1");
+    const reacao2_nome = dados.get("reacao_nome2");
+    const reacao2_desc = dados.get("reacao_desc2");
+
+    const monstroDiv = document.getElementById("monstro");
+    monstroDiv.innerHTML = `
+        <div>
+            <h1>${nome}</h1>
+            <strong>${tamanho}, ${alinhamento}</strong>
+        </div>
+
+        <div>
+            <strong>Classe de armadura</strong> ${ca} <br>
+            <strong>Pontos de vida</strong> ${hp} <br>
+            <strong>Velocidade</strong> ${velocidade} m <br>
+        </div>
+
+        <div id="atributos">
+            <div class="atributo"><strong>FOR</strong><p>${forca}</p></div>
+            <div class="atributo"><strong>DES</strong><p>${des}</p></div>
+            <div class="atributo"><strong>CON</strong><p>${con}</p></div>
+            <div class="atributo"><strong>INT</strong><p>${inteli}</p></div>
+            <div class="atributo"><strong>SAB</strong><p>${sab}</p></div>
+            <div class="atributo"><strong>CAR</strong><p>${car}</p></div>
+        </div>
+
+        <div>
+            <strong>Salvaguardas</strong> ${salvaguardas} <br>
+            <strong>Perícias</strong> ${pericias} <br>
+            <strong>Sentidos</strong> Percepção passiva ${sentidos} <br>
+            <strong>Línguas</strong> ${linguas} <br>
+        </div>
+
+        <div id="habilidades">
+            <strong>${hab1_nome}</strong> ${hab1_desc}<br>
+            <strong>${hab2_nome}</strong> ${hab2_desc}
+
+            <h1>Ações</h1>
+            <strong>${acao1_nome}</strong> ${acao1_desc}<br>
+            <strong>${acao2_nome}</strong> ${acao2_desc}
+
+            <h1>Reações</h1>
+            <strong>${reacao1_nome}</strong> ${reacao1_desc}<br>
+            <strong>${reacao2_nome}</strong> ${reacao2_desc}
+        </div>
+    `;
+}
+
+
 function gerar(){
     
     let classe = document.querySelector('#classe')

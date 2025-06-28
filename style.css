@@ -177,3 +177,11 @@ button{
     color: black;
     background-color: white;
 }
+
+@media (max-width: 450px) {
+    #containerFicha{
+        width: 1000vw;
+        flex-direction: column;
+        margin: 0;
+    }
+}

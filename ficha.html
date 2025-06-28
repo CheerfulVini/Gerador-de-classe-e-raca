@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site foda do vini</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleficha.css">
+</head>
+<body>
+    <header>
+        <h1 id="header"><button id="imghamb" onclick="hamburger()"><img src="hamburger.png" alt=""></button>Gerador de Monstro</h1>
+    </header>
+
+    <main>
+        <div id="hamburger">
+            <div><a href="">Gerador de Dungeon</a></div>
+            <div><a href="">Gerador de Campanha</a></div>
+            <div><a href="index.html">Gerador de Personagem</a></div>
+        </div>
+
+        <div id="containerFicha">
+            <form class="formMonstro">
+                Nome <input type="text" name="nome"><br><br>
+
+                Tamanho 
+                <select name="tamanho">
+                    <option value="">--Tamanho--</option>
+                    <option value="Miúdo">Miúdo</option>
+                    <option value="Pequeno">Pequeno</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Grande">Grande</option>
+                    <option value="Enorme">Enorme</option>
+                    <option value="Gigantesco">Gigantesco</option>
+                </select><br>
+
+                Alinhamento 
+                <select name="alinhamento">
+                    <option value="">--Alinhamento--</option>
+                    <option value="Leal Bom">Leal Bom</option>
+                    <option value="Neutro Bom">Neutro Bom</option>
+                    <option value="Caótico Bom">Caótico Bom</option>
+                    <option value="Leal Neutro">Leal Neutro</option>
+                    <option value="Neutro">Neutro</option>
+                    <option value="Caótico Neutro">Caótico Neutro</option>
+                    <option value="Leal Mau">Leal Mau</option>
+                    <option value="Neutro Mau">Neutro Mau</option>
+                    <option value="Caótico Mau">Caótico Mau</option>
+                </select><br><br>
+
+                Classe de Armadura <input type="number" name="ca"><br>
+                Pontos de Vida <input type="number" name="hp"><br>
+                Velocidade (m) <input type="number" name="velocidade"><br><br>
+
+                FOR <input type="number" name="for"><br>
+                DES <input type="number" name="des"><br>
+                CON <input type="number" name="con"><br>
+                INT <input type="number" name="int"><br>
+                SAB <input type="number" name="sab"><br>
+                CAR <input type="number" name="car"><br><br>
+
+                Salvaguardas <input type="text" name="salvaguardas"><br>
+                Perícias <input type="text" name="pericias"><br>
+                Percepção passiva <input type="text" name="sentidos"><br>
+                Línguas <input type="text" name="linguas"><br><br>
+
+                Habilidade 1 <input type="text" name="habilidade1_nome"><br>
+                Descrição <textarea name="habilidade1_desc"></textarea><br>
+
+                Habilidade 2 <input type="text" name="habilidade2_nome"><br>
+                Descrição <textarea name="habilidade2_desc"></textarea><br><br>
+
+                Ação 1 <input type="text" name="acao1_nome"><br>
+                Descrição <textarea name="acao1_desc"></textarea><br>
+
+                Ação 2 <input type="text" name="acao2_nome"><br>
+                Descrição <textarea name="acao2_desc"></textarea><br><br>
+
+                Reação 1 <input type="text" name="reacao_nome1"><br>
+                Descrição <textarea name="reacao_desc1"></textarea><br><br>
+
+                Reação 2 <input type="text" name="reacao_nome2"><br>
+                Descrição <textarea name="reacao_desc2"></textarea><br><br>
+
+                <input type="button" onclick="preencherFicha()" value="Enviar Ficha">
+            </form>
+
+            <div id="monstro">
+                <div>
+                    <h1>Nome</h1>
+
+                    <strong>Tamanho, Alinhamento</strong>
+                </div>
+
+                <div>
+                    <strong>Classe de armadura</strong> X <br>
+                    <strong>Pontos de vida</strong> X <br>
+                    <strong>Velocidade</strong> X m. <br>
+                </div>
+
+                <div id="atributos">
+                    <div class="atributo">
+                        <strong>FOR</strong>
+                        <p>X</p>
+                    </div>
+
+                    <div class="atributo">
+                        <strong>DES</strong>
+                        <p>X</p>
+                    </div>
+
+                    <div class="atributo">
+                        <strong>CON</strong>
+                        <p>X</p>
+                    </div>
+
+                    <div class="atributo">
+                        <strong>INT</strong>
+                        <p>X</p>
+                    </div>
+
+                    <div class="atributo">
+                        <strong>SAB</strong>
+                        <p>X</p>
+                    </div>
+
+                    <div class="atributo">
+                        <strong>CAR</strong>
+                        <p>X</p>
+                    </div>
+                </div>
+
+                <div>
+                    <strong>Salvaguardas</strong> bla, bla, e bla <br>
+                    <strong>Perícias</strong> bla, bla e bla <br>
+                    <strong>Sentidos</strong> Percepção passiva X <br>
+                    <strong>Línguas</strong> Comum <br>    
+                </div>
+
+                <div id="habilidades">
+                    <strong>Habilidade 1</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem labore quibusdam eligendi, temporibus impedit modi! <br>
+                    <strong>Habilidade 2</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius dolore distinctio qui autem ratione!
+
+                    <h1>Ações</h1>
+                    <strong>Ação 1</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, unde?<br>
+
+                    <strong>Ação 2</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, alias?
+
+                    <h1>Reações</h1>
+                    <strong>Reação</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ducimus.
+                </div>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
+<script src="script.js"></script>

@@ -43,3 +43,15 @@
 #habilidades strong{
     color: black;
 }
+
+@media (max-width: 450px) {
+    #containerFicha{
+        width: 1000vw;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #monstro{
+        width: 100%;
+    }
+}

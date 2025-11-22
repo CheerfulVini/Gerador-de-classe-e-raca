@@ -13,6 +13,105 @@ const racas = [
     "Rabbitfolk", "Revenant", "Viashino"
 ];
 
+const dndClasses = {
+    "phb": {
+        Bárbaro: ["Path of the Berserker", "Path of the Totem Warrior"],
+        Bardo: ["College of Lore", "College of Valor"],
+        Clérigo: [
+            "Knowledge Domain", "Life Domain", "Light Domain",
+            "Nature Domain", "Tempest Domain", "Trickery Domain", "War Domain"
+        ],
+        Druida: ["Circle of the Land", "Circle of the Moon"],
+        Guerreiro: ["Battle Master", "Champion", "Eldritch Knight"],
+        Ladino: ["Arcane Trickster", "Assassin", "Thief"],
+        Feiticeiro: ["Draconic Bloodline", "Wild Magic"],
+        Bruxo: ["Archfey", "Fiend", "Great Old One"],
+        Mago: [
+            "School of Abjuration", "School of Conjuration", "School of Divination",
+            "School of Enchantment", "School of Evocation", "School of Illusion",
+            "School of Necromancy", "School of Transmutation"
+        ],
+        Monge: ["Way of the Four Elements", "Way of the Open Hand", "Way of Shadow"],
+        Paladino: ["Oath of the Ancients", "Oath of Devotion", "Oath of Vengeance"],
+        Ranger: ["Beast Master Conclave", "Hunter Conclave"]
+    },
+
+    "xhg": {
+        Bárbaro: [
+            "Path of the Ancestral Guardian",
+            "Path of the Storm Herald",
+            "Path of the Zealot"
+        ],
+        Bardo: ["College of Glamour", "College of Swords", "College of Whispers"],
+        Clérigo: ["Forge Domain", "Grave Domain"],
+        Druida: ["Circle of Dreams", "Circle of the Shepherd"],
+        Guerreiro: ["Arcane Archer", "Cavalier", "Samurai"],
+        Ladino: ["Inquisitive", "Mastermind", "Scout", "Swashbuckler"],
+        Feiticeiro: ["Divine Soul", "Shadow Magic", "Storm Sorcery"],
+        Bruxo: ["Celestial", "Hexblade"],
+        Mago: ["School of War Magic"],
+        Monge: ["Way of the Drunken Master", "Way of the Kensei", "Way of the Sun Soul"],
+        Paladino: ["Oath of Conquest", "Oath of Redemption"],
+        Ranger: [
+            "Gloom Stalker Conclave",
+            "Horizon Walker Conclave",
+            "Monster Slayer Conclave"
+        ]
+    },
+
+    "tce": {
+        Artificer: ["Alchemist", "Armorer", "Artillerist", "Battle Smith"],
+        Bárbaro: ["Path of the Beast", "Path of Wild Magic"],
+        Bardo: ["College of Creation", "College of Eloquence"],
+        Clérigo: ["Order Domain", "Peace Domain", "Twilight Domain"],
+        Druida: ["Circle of Spores", "Circle of Stars", "Circle of Wildfire"],
+        Guerreiro: ["Psi Warrior", "Rune Knight"],
+        Ladino: ["Phantom", "Soulknife"],
+        Feiticeiro: ["Aberrant Mind", "Clockwork Soul"],
+        Bruxo: ["The Genie", "Fathomless"],
+        Mago: ["School of Bladesinging", "Order of Scribes"],
+        Monge: ["Way of Mercy", "Way of the Astral Self", "Way of the Ascendant Dragon"],
+        Paladino: ["Oath of Glory", "Oath of the Watchers"],
+        Ranger: ["Fey Wanderer", "Swarmkeeper"]
+    },
+
+    "scag": {
+        Bárbaro: ["Path of the Battlerager"],
+        Clérigo: ["Arcana Domain"],
+        Monge: ["Way of the Long Death"],
+        Paladino: ["Oath of the Crown"],
+        Bruxo: ["Undying"]
+    },
+
+    "egw": {
+        Guerreiro: ["Echo Knight"],
+        Mago: ["School of Chronurgy", "School of Graviturgy"]
+    },
+
+    "rvn": {
+        Bardo: ["College of Spirits"],
+        Bruxo: ["Undead"]
+    },
+
+    "bigby": {
+        Bárbaro: ["Path of the Giant"]
+    },
+
+    "fizban": {
+        Monge: ["Way of the Ascendant Dragon"],
+        Ranger: ["Drakewarden"]
+    },
+
+    "dgl": {
+        Feiticeiro: ["Lunar Sorcery"]
+    },
+
+    "dgm": {
+        Paladino: ["Oathbreaker"]
+    }
+};
+
+
 const dndRacas = [
     { livro: "Livro do Jogador", racas: [
         "Draconato", "Anão", "Elfo", "Gnomo", "Meio-Elfo", "Halfling",
@@ -44,22 +143,39 @@ const dndRacas = [
     { livro: "Ravenloft", racas: ["Dhampir", "Hexblood", "Renascido"] }
 ];
 
+
+
   
 const classes = [
     "Artificer",
     "Bárbaro",
     "Bardo",
+    "Bruxo",
     "Clérigo",
     "Druida",
+    "Feiticeiro",
     "Guerreiro",
+    "Ladino",
+    "Mago",
     "Monge",
     "Paladino",
-    "Ranger",
-    "Ladino",
-    "Feiticeiro",
-    "Bruxo",
-    "Mago"
-  ];
+    "Ranger"
+];
+
+const dinheiroClasse = [
+    [5, 4, 10],
+    [5, 4, 10],
+    [4, 4, 10],
+    [5, 4, 10],
+    [2, 4, 10],
+    [3, 4, 10],
+    [5, 4, 10],
+    [4, 4, 10],
+    [4, 4, 10],
+    [5, 4, 1],
+    [5, 4, 10],
+    [5, 4, 10]
+]
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * (max));
@@ -160,6 +276,8 @@ function gerar(){
     
     let classe = document.querySelector('#classe')
     let raca = document.querySelector('#raca')
+    let din = document.querySelector('#dinheiro')
+    let atributos = document.querySelector('#attr')
 
     var checkboxes = [
         document.getElementById("phb"),
@@ -174,29 +292,104 @@ function gerar(){
         document.getElementById("hmb"),
         document.getElementById("oga"),
         document.getElementById("pls"),
-        document.getElementById("rvn")
+        document.getElementById("rvn"),
+        document.getElementById("xhg"),    
+        document.getElementById("tce"),    // Tasha
+        document.getElementById("scag"),   // Sword Coast
+        document.getElementById("egw"),    // Wildemount
+        document.getElementById("bigby"),  // Bigby
+        document.getElementById("fizban"), // Fizban
+        document.getElementById("dmg")
     ];
 
+    let livrosRacas = [];
+    let livrosClasses = [];
     let numCheckbox = 0;
-    let livros = []
 
-    for (let index = 0; index < checkboxes.length; index++) {
-        if (checkboxes[index].checked == true){
-            livros.push(dndRacas[index])
-            numCheckbox++
+    // Coleta os livros permitidos para raças e classes
+    for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            livrosRacas.push(dndRacas[i]);
+            numCheckbox++;
+        }
+
+        // Verifica se o checkbox corresponde a um livro de classes
+        const checkboxId = checkboxes[i].id;
+        if (dndClasses[checkboxId]) {
+            livrosClasses.push(checkboxId);
         }
     }
 
-    livro = livros[getRandomInt(numCheckbox)]['racas']
-    racaEscolhida = livro[getRandomInt(livro.length)]
+    // Verifica se ao menos um livro foi marcado
+    if (numCheckbox === 0) {
+        alert("Selecione ao menos um livro!");
+        return;
+    }
 
-    console.log(livros)
+    // ESCOLHER RAÇA
+    let livroRacaEscolhido = livrosRacas[getRandomInt(livrosRacas.length)];
+    let racas = livroRacaEscolhido.racas;
+    let racaEscolhida = racas[getRandomInt(racas.length)];
 
-    console.log(racaEscolhida);
+    // ESCOLHER CLASSE
+    let classeCompleta = "";
+    let subclasse = "";
     
-    let numclasse = getRandomInt(13)
-    classe.innerText = 'Classe: ' + classes[numclasse];
-    raca.innerText = 'Raça: ' + racaEscolhida
+    if (livrosClasses.length > 0) {
+        // Escolhe um livro de classes aleatório
+        let livroClasseEscolhido = livrosClasses[getRandomInt(livrosClasses.length)];
+        let classesDoLivro = dndClasses[livroClasseEscolhido];
+        
+        // Pega todas as classes disponíveis neste livro
+        let nomesClasses = Object.keys(classesDoLivro);
+        
+        // Escolhe uma classe aleatória
+        let classeEscolhida = nomesClasses[getRandomInt(nomesClasses.length)];
+        
+        // Pega as subclasses desta classe
+        let subclasses = classesDoLivro[classeEscolhida];
+        
+        // Escolhe uma subclass aleatória
+        subclasse = subclasses[getRandomInt(subclasses.length)];
+        
+        classeCompleta = `${classeEscolhida} - ${subclasse}`;
+    } else {
+        // Fallback: usa uma classe básica se nenhum livro de classes foi selecionado
+        let numclasse = getRandomInt(classes.length);
+        classeCompleta = classes[numclasse];
+    }
+
+    // DINHEIRO (mantive sua lógica original)
+    let numclasse = getRandomInt(12); // Ajustei para 12 porque dinheiroClasse tem 12 elementos
+    let dinheiro = dinheiroClasse[numclasse];
+    let dinheiroReal = 0;
+
+    for (let index = 0; index < dinheiro[0]; index++) {
+        dinheiroReal += getRandomInt(dinheiro[1]) + 1; // +1 porque getRandomInt(max) vai de 0 a max-1
+    }
+
+    dinheiroReal = dinheiroReal * dinheiro[2];
+
+    // ATRIBUTOS (mantive sua lógica original)
+    let attr = [0, 0, 0, 0, 0, 0];
+
+    for (let i = 0; i < 6; i++) {
+        let dados = [];
+        for (let j = 0; j < 4; j++) {
+            let dado = getRandomInt(6) + 1; // +1 para ir de 1 a 6
+            dados[j] = dado;
+        }
+
+        // Soma os 3 maiores valores (descarta o menor)
+        dados.sort((a, b) => b - a); // Ordena em ordem decrescente
+        attr[i] = dados[0] + dados[1] + dados[2];
+    }
+    
+    // ATUALIZA A TELA
+    classe.innerText = 'Classe: ' + classeCompleta;
+    raca.innerText = 'Raça: ' + racaEscolhida;
+    din.innerText = 'Dinheiro: ' + dinheiroReal + " (" + dinheiro[0] + "d" + dinheiro[1] + " x " + dinheiro[2] + ")";
+    atributos.innerText = `For(${attr[0]}) Des(${attr[1]}) Con(${attr[2]}) Int(${attr[3]}) Sab(${attr[4]}) Car(${attr[5]})`;
 }
 
 function virus(){
@@ -218,13 +411,27 @@ function seleciona() {
         document.getElementById("hmb"),
         document.getElementById("oga"),
         document.getElementById("pls"),
-        document.getElementById("rvn")
+        document.getElementById("rvn"),
+        document.getElementById("xhg"),    
+        document.getElementById("tce"),    // Tasha
+        document.getElementById("scag"),   // Sword Coast
+        document.getElementById("egw"),    // Wildemount
+        document.getElementById("bigby"),  // Bigby
+        document.getElementById("fizban"), // Fizban
+        document.getElementById("dmg")
     ];
 
-    for (let i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = true;
+    if(checkboxes[1].checked == true){
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        }
+    }else{
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+        }
     }
 }
+    
 
 let aberto = false
 
